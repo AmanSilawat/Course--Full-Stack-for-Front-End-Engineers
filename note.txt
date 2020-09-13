@@ -19,3 +19,101 @@
 ** INSIDE OF VIM SOME FEATURE **
 1. (cmd-last line command) :set number      -> set number before line
 2. (cmd-last line command) :set nonumber    -> unset number before line
+
+
+** SSH (Secure Socket Shell) **
+ssh paire key 
+public key / private key
+
+1. cd ~/.ssh
+2. ls -> no any list available in this directory
+3. ssh-keygen
+
+    -> Generating public/private rsa key pair.
+    -> Enter file in which to save the key (/home/aman/.ssh/id_rsa): fsfe2
+    -> Enter passphrase (empty for no passphrase): 
+    -> Enter same passphrase again: 
+    -> Your identification has been saved in fsfe2
+    -> Your public key has been saved in fsfe2.pub
+    -> The key fingerprint is:
+    -> SHA256:Y8lvwy+HDqc2syVDzOLUqhmvxZkyJrvperaZAgqg6gQ aman@aman
+    -> The key's randomart image is:
+    -> +---[RSA 3072]----+
+    -> |                 |
+    -> |                 |
+    -> |                 |
+    -> |.      = .       |
+    -> |E     o S        |
+    -> |=    + B +       |
+    -> |=.. = B + B.     |
+    -> |= oB O  +Ooo.    |
+    -> |oBOo+...o=.o.    |
+    -> +----[SHA256]-----+-> 
+
+4. mkdir -p ~/.ssh
+5. ls | grep fsfe2
+    -> fsfe2         <-  private key
+    -> fsfe2.pub     <-  public key
+
+6. cat fsfe2.pub (show a public ssh key)
+    -> ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDe63+V90fmwYFFrJyo70kwAdBZqOACdEZI/Ec74e+RS/QumjJ/YION8fvtbNwNwyCtzfTX/2naBlGdkpYXpwtqwC3f5WZ+VdcIeoxyD5PCmUYiUIx35yFMVnXulAPsOOjzxSnHU9jNPOZ5VzP9l2+9S2rDDXs7PMj6KRLbPBYJxIUZ9SBy4KCZK1VLLh5Elsxe2SEz6pBhX0c3Iq8iYbBr/1dfPL/eLljWGZi/PbxIOh39yFg2lbu0gwtmj9cqx1hM4L4+LCd/UaCkgmVN2+wiJhCHiCoO0D4JornOfv+mFy4D75kClnyPJ5RXN65/7RqDLKrkjxgipOlFEwrmD6rxbUsX9s6QI/1Oxj/kXdVd9f0GSjUF1BDPHq8un7nwaHTFIoA1spsA6SNwDKIpPGG3zjUJf9kNTQZLZCcqfK88PFIkaT7IgIdxEOiQ4du4i/xHdbw2EEXG2cwi7NCjEj6SPyfyjIq2VVy+YVtE1HbF/3KalC1fdoIQ7sPBwb2+q7U= aman@aman
+
+7. cat fsfe2 (show a private ssh key)
+    -> -----BEGIN OPENSSH PRIVATE KEY-----
+    b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+    NhAAAAAwEAAQAAAYEA3ut/lfdH5sGBRaycqO9JMAHQWajgAnRGSPxHO+HvkUv0Lpoyf2CD
+    jfH77WzcDcMgrc301/9pzK76rmJ9h3Q1/rdltGAiJ
+    ztBiM8NoFtCMS5Bqnet76icyHRU5qBPl1g4lVqRC8/wg5gT5wb2B9nEK62Cy8rqYiNDQZn
+    zYk8R58mGUtnxnAAAACWFtYW5AYW1hbgE=
+    -----END OPENSSH PRIVATE KEY-----
+
+8. public key use on https://cloud.digitalocean.com/
+
+
+
+
+** nginx **
+1. sudo apt install nginx
+2. sudo service nginx start
+3. sudo less /etc/nginx/sites-available/default
+
+
+
+
+** APPICATION SETUP **
+
+1. sudo chown -R $USER:$USER /var/www
+2. cd /var/www/app
+3. pwd -> /var/www/app
+4. git init
+5. mkdir -p ui/js ui/css ui/html
+6. ls ui -> css  html  js
+7. touch app.js
+8. npm init
+
+9. cat package.json
+10. npm i express --save
+
+11. vi app.js
+    -> const express = require('express');
+    -> const app = express();
+    -> const port = 3000;
+    ->
+    -> app.get('/', (req, res) => {
+    ->     res.send('Hello World!');
+    -> });
+    -> 
+    -> app.listen(port, () => console.log(`Example app listening on port ${port}!));
+
+12. node app.js
+
+13. (ADD Nginx) Edit nginx config
+14. sudo vi /etc/nginx/sites-available/default
+    -> location / {
+    ->     proxy_pass http:127.0.0.1:3000/;
+    -> }
+
+15. sudo service nginx reload
+ERROR
+    ->Job for nginx.service failed.
+    ->See "systemctl status nginx.service" and "journalctl -xe" for details.
