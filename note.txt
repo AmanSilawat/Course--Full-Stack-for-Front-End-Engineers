@@ -1,0 +1,21 @@
+** make a server **
+1. (cmd) vi simpleServer.js
+2. (cmd) simpleServer.js
+
+-> const http = require('http');
+-> 
+-> http.createServer(function (req, res) {
+->         res.write('Hello, World!');
+->         res.end();
+-> }).listen(8080);
+-> 
+-> console.log('Server started! Listening on port 8080');
+
+3. (cmd) node simpleServer.js
+4. goto browser and search local - localhost:8080
+5. CTRL + C (TO STOP SERVER)
+
+
+** INSIDE OF VIM SOME FEATURE **
+1. (cmd-last line command) :set number      -> set number before line
+2. (cmd-last line command) :set nonumber    -> unset number before line
