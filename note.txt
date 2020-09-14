@@ -110,10 +110,45 @@ public key / private key
 13. (ADD Nginx) Edit nginx config
 14. sudo vi /etc/nginx/sites-available/default
     -> location / {
-    ->     proxy_pass http:127.0.0.1:3000/;
+    ->     proxy_pass http://127.0.0.1:3000/;
     -> }
 
 15. sudo service nginx reload
 ERROR
-    ->Job for nginx.service failed.
-    ->See "systemctl status nginx.service" and "journalctl -xe" for details.
+    -> nginx.service is not active, cannot reload.
+
+16. nginx -t -> configration
+
+
+** Process Manager **
+1. (install PM2-CMD) sudo npm i -g pm2
+2. pm2 start app.js    #error note only perform server directory
+3. pm2 start
+
+** version control **
+3. pm2 start (your server - off and on)
+4. pm2 save
+
+
+**** version control with git (ON SERVER PATH)*****
+1. create repository (thick on - initialize this repo... and select node)
+2. create ssh key cmd - cd ~/.ssh/
+3. goto: git->setting->ssh and GPG keys->add new ssh key
+4. (cmd) - cat id_rsa.pub
+5. copy and past ssh key to on git page
+6. WE NEED TO ADD TO OUR NEW REPOSITORY ON OUR SERVER. WE WANNA USE THE SSH.
+7. COPY SSH LINK ON YOUR REPO...
+8. cd /var/www/app/
+9. git status ->
+    -> On branch master
+    -> nothing to commit, working tree clean
+10. git remote -v  (verifiy correctly working)
+11. vi .gitignore
+    add a line to top
+    -> (cmd) node_modules/
+    
+12. git status -> change -> gitignore file
+13. git commit -a " Modify gitignore"
+13. git push origin master
+
+222. git remote add origin git@github.com
