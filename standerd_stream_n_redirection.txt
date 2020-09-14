@@ -1,0 +1,95 @@
+** pipe operator **
+|  - read from stdout
+>  - write stdout to file
+>> - append stdout to file
+<  - read from stdin
+2> - read from stdin
+
+(cmd) -> ps
+(cmd) -> ps | brep bash
+
+(cmd) -> touch test.log
+(cmd) -> ps > test.log
+(cmd) -> cat test.log
+
+
+** Finding thing **
+$ find   /bar     -name    foo.rxt
+   ↑      ↑         ↑         ↑
+ find, directory, option, file/folder
+
+ * usefull option *
+ -name
+ -type
+ -empty
+ -executable
+ -writable
+
+-- example --
+???????????
+
+** bash history **
+in terminal press cmr+r
+
+
+
+** Finding thing **
+$ grep    /i      -'jem'     /var/www
+   ↑      ↑         ↑           ↑
+ grep,  options,  search,   directory
+                expression
+
+
+$ zgrep FILE   -> search inside gzip file
+
+
+(cmd) -> ps aux | grep node        (grep all node)
+(cmd) -> sudo cat /var/log/auth.log | grep jem
+
+
+
+** Nginx rediret **
+location /help {
+    return 301 https://develper.mozilla.org/en-US/;
+}
+301 - mean the page has been moved permanently
+302 - mean the page has been moved temporarily
+
+
+** Nginx subdomain **
+server {
+    listen 80;
+    listen [::]80; # IPV6 notation
+
+    server_name test.jemisthe.best;
+
+    location /{
+        proxy_pass https://localhost:3000;
+    }
+}
+
+
+** Nginx Gzip **
+
+/etc/nginx/nginx.conf
+???
+
+
+
+
+** Nginx Gzip **
+sudo cat /var/log/auth.log
+
+
+** Security **
+SSH
+Firewalls
+Updates
+Two factor authentication
+VPN
+
+
+slide 176
+
+
+** Security Ethics **
