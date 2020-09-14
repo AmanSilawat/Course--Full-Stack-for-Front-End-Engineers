@@ -1,0 +1,9 @@
+** Saving Data **
+Files
+Databases
+
+Q.Why not save everything to a file?
+answer: File is not portable - mean 50-80gb data not easily transfer 1 server to another server and all data store in dard disk
+
+DATABASE:
+database is a structured way of saving data in such a way that it's redable and writable by all parties.
