@@ -1,0 +1,46 @@
+** Containers & Microservices **
+
+it's a tiny service.
+
+Lightweight
+Portable
+Easier for development
+Easier to manage
+Faster startup
+Decouple application from infrastructure
+
+
+** docker ** 
+Amazon ECS
+Apache Mesos
+CoreOs rkt
+
+** Orchestration (Kubernetes "K8s") **
+Docker Swarm
+Amaxon EKS
+Apache Mesos
+AKS
+
+
+
+
+**** Load Balancers (Scheduling Algorithms) ****
+Round Robin*
+IP Hashing
+Random Choice
+Least Conections
+Least Connections
+Least Load
+
+
+** exercise (top) **
+
+(cmd) -> top           (q - quite)
+(cmd) -> sudo apt install htop
+(cmd) -> htop
+
+
+** Deployment **
+Ansible
+Vagrant
+Puppet
