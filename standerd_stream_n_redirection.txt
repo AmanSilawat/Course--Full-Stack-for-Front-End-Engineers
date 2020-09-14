@@ -90,6 +90,3 @@ VPN
 
 
 slide 176
-
-
-** Security Ethics **

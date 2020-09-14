@@ -1,0 +1,29 @@
+HTTP: (Hypertext transport protocol)
+http run our tcp
+
+request -----------> response
+request <----------- response
+
+
+        ** http header **
+User-agent          The requesting device type
+Accept              What the device will handle
+Accept-language     Browser languages
+Content-type        The type of media
+Set-cookie          Sets stateful information
+X-                  Typically used for custom headers
+
+
+
+        ** Status Code **
+200 Ok
+301 Moved Permanently
+302 Found (temporary redirect)
+401 Not authorized
+500 Internal server error
+
+1xx Information
+2xx Sucess
+3xx Redirect
+4xx Clint error
+5xx Server error
