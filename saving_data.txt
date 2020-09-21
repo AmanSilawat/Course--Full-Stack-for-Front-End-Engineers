@@ -5,5 +5,35 @@ Databases
 Q.Why not save everything to a file?
 answer: File is not portable - mean 50-80gb data not easily transfer 1 server to another server and all data store in dard disk
 
+
+
 DATABASE:
 database is a structured way of saving data in such a way that it's redable and writable by all parties.
+
+relational database:
+    SQL
+    Tables
+    Related data
+    Strict structure
+
+non-relational database:
+    NoSQL
+    Data agnostic
+    loose structure
+
+
+
+Redis
+(cmd) sudo apt install redis-server -> install server
+(cmd) sudo vi /etc/redis/redis.config -> (edit config) supervised systemd
+(cmd) sudo systemctl restart redis.service -> Restart redis server
+
+Mysql
+(cmd) sudo apt install mysql-server -> install mysql server
+(cmd) mysql_secure_installation -> Run setup
+
+
+
+*** Websockets ***
+It's a persistent bidirectional connection between the client and server. So unlike the current status with TCP, which every single connection requires that handshake. With the handed off web socket, you only make one connection and it keeps that alive through a tunnel.
+

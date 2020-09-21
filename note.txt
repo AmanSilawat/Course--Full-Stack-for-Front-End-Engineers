@@ -1,3 +1,11 @@
+Terminal : The terminal is the GUI window that you see on the screen. It takes commands and shows output.
+
+Shell: The shell is the software that interprets and executes the various commands that we type in the terminal.
+
+Bash: Bash is a particular shell. It stands for Bourne Again Shell. Some other examples of shell are sh(bourne shell), csh(c shell), tcsh(turbo c shell) etc.
+
+Bash: Bash is a particular shell. It stands for Bourne Again Shell. Some other examples of shell are sh(bourne shell), csh(c shell), tcsh(turbo c shell) etc.
+
 ** make a server **
 1. (cmd) vi simpleServer.js
 2. (cmd) simpleServer.js
